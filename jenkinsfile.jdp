@@ -2,7 +2,14 @@ pipeline{
     agent any
     stages{
         stage('Code-pull'){
-            
+            steps{
+                git credentialsId: 'Github', url: 'https://github.com/RANIRAJA/python-helloworld.git'
+            }
+        }
+        stage('list'){
+            steps{
+                sh label: '', script: 'ls'
+            }
         }
     }
 }
