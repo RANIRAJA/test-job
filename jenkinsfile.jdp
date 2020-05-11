@@ -14,7 +14,7 @@ pipeline{
         }
         stage('build') {
             steps{
-                sh label: '', script: 'docker build -t ${JOB_NAME}:V${BUILD_NUMBER}'
+                sh label: '', script: 'docker build -t ${JOB_NAME}:V${BUILD_NUMBER} .'
             }
         }
     }
