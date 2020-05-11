@@ -1,4 +1,14 @@
-RUN curl -fsSLO https://get.docker/builds/Linux/x86_64/docker-17.04.0-ce.tgz \
-  && tar xzvf docker-17.04.0-ce.tgz \
-  && mv docker/docker /usr/local/bin \
-  && rm -r docker docker-17.04.0-ce.tgz
+### Download the base image ###
+FROM ubuntu:18.04
+
+MAINTAINER B@Kul Gupt@ (bakulgupta11@gmail.com,github.com/BullHacks)
+
+### Includes the installation of python,pip and pipenv required for backend
+RUN apt-get -y update && \
+    apt-get install -y python3.6 \
+    python3-pip \
+    libmysqlclient-dev && \
+    pip3 install pipenv
+
+### Creation of soft link ###
+RUN ln -s python3.6 /usr/bin/python 
