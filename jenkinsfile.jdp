@@ -1,8 +1,6 @@
 pipeline{
     agent any
-    Env{
-        Dockerfile='true'
-    }
+    L:'Dockerfile true'
     stages{
         stage('Code-pull'){
             steps{
