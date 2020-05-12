@@ -16,5 +16,10 @@ pipeline{
                 sh label: '', script: 'docker build -t ${JOB_NAME}:V${BUILD_NUMBER} .'
             }
         }
+        stage('deploy') {
+            steps{
+                sh label: '', script: 'docker run -d -p 8003:8003 --name ${JOB_NAME} ${JOB_NAME}:V${BUILD_NUMBER}'
+            }
+        }
     }
 }

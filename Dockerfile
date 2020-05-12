@@ -1,7 +1,7 @@
 ### Download the base image ###
 FROM ubuntu:18.04
 
-MAINTAINER B@Kul Gupt@ (bakulgupta11@gmail.com,github.com/BullHacks)
+#MAINTAINER B@Kul Gupt@ (bakulgupta11@gmail.com,github.com/BullHacks)
 
 ### Includes the installation of python,pip and pipenv required for backend
 RUN apt-get -y update && \
